@@ -8,7 +8,7 @@
 
 # Written by Isaac Nelson <isaac.nelson@churchofjesuschrist.org> 26 Sep 2019
 
-loggedInUser=$( /bin/echo "show State:/Users/ConsoleUser" | /usr/sbin/scutil | /usr/local/bin/awk '/Name :/ && ! /loginwindow/ { print $3 }' )
+loggedInUser=$( /bin/echo "show State:/Users/ConsoleUser" | /usr/sbin/scutil | /usr/bin/awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 
 /bin/echo "Setting MAU AcknowledgedDataCollectionPolicy to RequiredDataOnly for ${loggedInUser} so they won't be presented with the Required Data Notice on the first launch of MAU."
 
